@@ -43,7 +43,6 @@
           <li><a href="#filosofi" class="nav-link">Filosofi & Makna</a></li>
           <li><a href="#panduan" class="nav-link">Panduan Rawat</a></li>
           <li><a href="#kuis" class="nav-link">Kuis Karakter</a></li>
-          <li><a href="#kalkulator" class="nav-link">Kalkulator Siram</a></li>
           <li><a href="#konsultasi" class="nav-link">Konsultasi</a></li>
         </ul>
       </nav>
@@ -449,70 +448,7 @@
       </div>
     </section>
 
-    <!-- ======================================================================
-         8. FITUR INTERAKTIF: KALKULATOR JADWAL SIRAM
-         ====================================================================== -->
-    <section class="calculator-section" id="kalkulator">
-      <div class="container">
-        <div class="section-header">
-          <span class="section-tag">Kalkulator Cerdas</span>
-          <h2 class="section-title">Kalkulator Interval Penyiraman Tanaman</h2>
-          <p class="section-subtitle">
-            Kombinasikan jenis tanaman, lingkungan tempat tinggal, dan kondisi musim untuk menghitung frekuensi penyiraman yang paling akurat.
-          </p>
-        </div>
-
-        <div class="calc-grid">
-          <!-- Formulir Parameter -->
-          <div class="calc-form">
-            <div class="form-group">
-              <label for="calc-plant-select" class="form-label">Pilih Jenis Tanaman:</label>
-              <select id="calc-plant-select" class="form-control">
-                <!-- Diisi otomatis oleh app.js dari database -->
-              </select>
-            </div>
-
-            <div class="form-group">
-              <label for="calc-env-select" class="form-label">Lokasi / Lingkungan Peletakan:</label>
-              <select id="calc-env-select" class="form-control">
-                <option value="indoor-ac">Indoor Ruangan Ber-AC (Penguapan lambat)</option>
-                <option value="indoor-normal" selected>Indoor Berventilasi Baik (Jendela terbuka)</option>
-                <option value="outdoor-shade">Outdoor Teras Teduh (Semi Naungan)</option>
-                <option value="outdoor-sun">Outdoor Sinar Terik Langsung (Cepat kering)</option>
-              </select>
-            </div>
-
-            <div class="form-group">
-              <label for="calc-season-select" class="form-label">Kondisi Musim / Cuaca Saat Ini:</label>
-              <select id="calc-season-select" class="form-control">
-                <option value="normal" selected>Cuaca Normal / Pancaroba</option>
-                <option value="hujan">Musim Hujan (Lembap tinggi & basah)</option>
-                <option value="kemarau">Musim Kemarau / Terik Panas (Kering)</option>
-              </select>
-            </div>
-
-            <button class="btn btn-primary" id="calc-submit-btn" style="margin-top: 0.5rem;">
-              <span>Hitung Rekomendasi Jadwal</span> 💧
-            </button>
-          </div>
-
-          <!-- Kotak Hasil Kalkulasi -->
-          <div class="calc-result-box">
-            <div class="calc-result-icon">💧</div>
-            <h3 class="calc-result-title">Hasil Analisis Penyiraman</h3>
-            <div class="calc-result-schedule" id="calc-result-schedule">
-              Siram 1 - 2 Kali Seminggu
-            </div>
-            <div class="calc-result-tips" id="calc-result-tips">
-              Pilih parameter di samping dan klik tombol kalkulasi untuk melihat panduan spesifik.
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-
-    <!-- ======================================================================
+        <!-- ======================================================================
          10. SECTION KONSULTASI / TANYA PAKAR BOTANI
          ====================================================================== -->
     <section class="contact-section" id="konsultasi">
@@ -600,7 +536,6 @@
         <div class="footer-col">
           <h4>Fitur Interaktif</h4>
           <ul class="footer-links">
-            <li><a href="#kalkulator">Kalkulator Jadwal Siram</a></li>
             <li><a href="#konsultasi">Klinik Konsultasi Botani</a></li>
             <li><a href="#panduan">Tabel Diagnosis Gejala</a></li>
           </ul>
