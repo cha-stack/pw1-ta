@@ -21,9 +21,6 @@ document.addEventListener("DOMContentLoaded", () => {
   let searchQuery = "";
   let sortOrder = "default";
 
-  // Ambil data favorit dari localStorage (jika ada)
-  let favoriteIds = JSON.parse(localStorage.getItem("florapedia_favs") || "[]");
-
   // DOM Elements - Katalog
   const plantsGrid = document.getElementById("plants-grid");
   const resultsCount = document.getElementById("results-count");
@@ -49,12 +46,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const modalTroubleshoot = document.getElementById("modal-troubleshoot");
   const modalTabBtns = document.querySelectorAll(".modal-tab-btn");
   const modalTabPanes = document.querySelectorAll(".modal-tab-pane");
-
-  // DOM Elements - Favorit Section
-  const favGrid = document.getElementById("favorites-grid");
-  const favEmpty = document.getElementById("favorites-empty");
-  const favCounterNav = document.getElementById("fav-counter-badge");
-  const clearFavsBtn = document.getElementById("clear-favs-btn");
 
   // DOM Elements - Tema Dark/Light
   const themeToggleBtn = document.getElementById("theme-toggle-btn");
@@ -161,15 +152,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
     targetContainer.innerHTML = plantsArray
       .map((plant) => {
-        const isFav = favoriteIds.includes(plant.id);
         const difficultyClass = `badge-diff-${plant.difficulty}`;
 
         return `
           <article class="plant-card" data-id="${plant.id}">
             <div class="plant-card-media">
-              <img 
-                src="${plant.image}" 
-                alt="${plant.name}" 
+              <img
+                src="${plant.image}"
+                alt="${plant.name}"
                 loading="lazy"
                 onerror="this.onerror=null; this.src='med/plant-fallback.svg';"
               />
@@ -177,14 +167,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 <span class="badge-tag badge-category">${plant.categoryLabel}</span>
                 <span class="badge-tag ${difficultyClass}">${plant.difficultyLabel}</span>
               </div>
-              <button 
-                class="btn-bookmark ${isFav ? "bookmarked" : ""}" 
-                data-fav-id="${plant.id}" 
-                title="${isFav ? "Hapus dari Favorit" : "Simpan ke Favorit"}"
-                aria-label="Simpan ke favorit"
-              >
-                ${isFav ? "❤️" : "🤍"}
-              </button>
             </div>
             
             <div class="plant-card-body">
@@ -228,16 +210,6 @@ document.addEventListener("DOMContentLoaded", () => {
       btn.addEventListener("click", () => {
         const id = btn.getAttribute("data-detail-id");
         openPlantModal(id);
-      });
-    });
-
-    // Tombol Bookmark / Favorit
-    const bookmarkBtns = container.querySelectorAll("[data-fav-id]");
-    bookmarkBtns.forEach((btn) => {
-      btn.addEventListener("click", (e) => {
-        e.stopPropagation();
-        const id = btn.getAttribute("data-fav-id");
-        toggleFavorite(id);
       });
     });
   }
@@ -670,6 +642,5 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Inisialisasi Tampilan Awal
   filterAndRenderPlants();
-  updateFavoriteUI();
   calculateWatering();
 });

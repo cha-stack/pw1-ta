@@ -274,25 +274,7 @@ button {
   gap: 0.85rem;
 }
 
-/* Tombol Aksi Navigasi (Theme & Favorit) */
-.icon-btn {
-  width: 2.6rem;
-  height: 2.6rem;
-  border-radius: var(--radius-full);
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  background-color: var(--bg-subtle);
-  color: var(--text-primary);
-  border: 1px solid var(--border-subtle);
-  position: relative;
-}
-
-.icon-btn:hover {
-  background-color: var(--primary-100);
-  color: var(--primary-800);
-  transform: translateY(-2px);
-}
+/* Tombol Aksi Navigasi (Theme & ) */
 
 .badge-count {
   position: absolute;
