@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1b4332" />
+      <stop offset="100%" stop-color="#2d6a4f" />
+    </linearGradient>
+    <linearGradient id="leafGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#74c69d" />
+      <stop offset="100%" stop-color="#52b788" />
+    </linearGradient>
+  </defs>
+  <rect width="800" height="600" fill="url(#bgGrad)" />
+  <g transform="translate(400, 310)" text-anchor="middle">
+    <!-- Stylized Pot -->
+    <path d="M-60 110 L60 110 L45 190 L-45 190 Z" fill="#d4a373" />
+    <rect x="-68" y="98" width="136" height="15" rx="6" fill="#c28b57" />
+    <!-- Stems -->
+    <path d="M0 100 Q-30 0 -90 -60" stroke="#b7e4c7" stroke-width="6" fill="none" stroke-linecap="round" />
+    <path d="M0 100 Q10 10 0 -110" stroke="#b7e4c7" stroke-width="7" fill="none" stroke-linecap="round" />
+    <path d="M0 100 Q40 10 95 -50" stroke="#b7e4c7" stroke-width="6" fill="none" stroke-linecap="round" />
+    <!-- Leaves -->
+    <path d="M-90 -60 C-150 -80 -170 -10 -90 10 C-30 -10 -50 -50 -90 -60 Z" fill="url(#leafGrad)" />
+    <path d="M0 -110 C-50 -180 0 -220 30 -190 C60 -150 40 -120 0 -110 Z" fill="url(#leafGrad)" />
+    <path d="M95 -50 C160 -70 170 0 105 15 C50 -5 65 -40 95 -50 Z" fill="url(#leafGrad)" />
+  </g>
+  <text x="400" y="540" font-family="system-ui, sans-serif" font-size="22" font-weight="bold" fill="#d8f3dc" text-anchor="middle" letter-spacing="2">
+    FLORAPEDIA BOTANICAL COLLECTION
+  </text>
+</svg>

@@ -1,0 +1,767 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="FloraPedia - Ensiklopedia interaktif jenis tanaman, filosofi kehidupan mendalam, dan panduan perawatan botani. Tugas Akhir Pemrograman Web 1." />
+  <meta name="author" content="Kang Maman Plants - Mahasiswa Pemrograman Web 1" />
+  <title>FloraPedia — Ensiklopedia, Filosofi & Seni Merawat Tanaman</title>
+
+  <!-- Google Fonts: Plus Jakarta Sans & Playfair Display untuk Sentuhan Elegan -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Lembar Gaya CSS Handcrafted (100% Buatan Sendiri Tanpa Framework) -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ========================================================================
+       1. HEADER & NAVBAR UTAMA
+       ======================================================================== -->
+  <header class="site-header">
+    <div class="container navbar">
+      <!-- Logo & Brand Identitas -->
+      <a href="#beranda" class="brand-logo" aria-label="Beranda FloraPedia">
+        <div class="brand-icon">
+          <!-- SVG Ikon Daun Organik -->
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"></path>
+            <path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"></path>
+          </svg>
+        </div>
+        <div>
+          <span>FloraPedia</span>
+          <span class="brand-text-sub">Kang Maman Plants</span>
+        </div>
+      </a>
+
+      <!-- Menu Navigasi Navigasi -->
+      <nav>
+        <ul class="nav-links" id="nav-links">
+          <li><a href="#beranda" class="nav-link active">Beranda</a></li>
+          <li><a href="#katalog" class="nav-link">Katalog Tanaman</a></li>
+          <li><a href="#filosofi" class="nav-link">Filosofi & Makna</a></li>
+          <li><a href="#panduan" class="nav-link">Panduan Rawat</a></li>
+          <li><a href="#kuis" class="nav-link">Kuis Karakter</a></li>
+          <li><a href="#kalkulator" class="nav-link">Kalkulator Siram</a></li>
+          <li><a href="#favorit" class="nav-link">Koleksi Saya</a></li>
+          <li><a href="#konsultasi" class="nav-link">Konsultasi</a></li>
+        </ul>
+      </nav>
+
+      <!-- Aksi Navigasi (Tema & Counter Favorit) -->
+      <div class="nav-actions">
+        <!-- Tombol Bookmark Cepat -->
+        <a href="#favorit" class="icon-btn" title="Lihat Tanaman Favorit" aria-label="Favorit">
+          <span>❤️</span>
+          <span class="badge-count" id="fav-counter-badge" style="display: none;">0</span>
+        </a>
+
+        <!-- Tombol Ganti Tema (Dark / Light Mode) -->
+        <button class="icon-btn" id="theme-toggle-btn" title="Ganti Tema Siang/Malam" aria-label="Ganti Tema">
+          <span id="theme-icon">🌙</span>
+        </button>
+
+        <!-- Tombol Hamburger Mobile -->
+        <button class="hamburger-btn" id="hamburger-btn" aria-label="Buka Menu Navigasi">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ======================================================================
+         2. HERO SECTION
+         ====================================================================== -->
+    <section class="hero-section" id="beranda">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <div class="hero-badge">
+            <span>🌿</span>
+            <span>Tugas Akhir Pemrograman Web 1</span>
+          </div>
+          <h1 class="hero-title">
+            Menyelami Alam: Makna, <span>Filosofi Hidup</span>, dan Seni Merawat Tanaman.
+          </h1>
+          <p class="hero-desc">
+            Ensiklopedia botani komprehensif yang memadukan keindahan ragam tanaman tropis, kearifan filosofis mendalam di balik setiap helai daun, serta panduan praktis perawatan ilmiah bagi para pecinta tanaman pemula maupun mahir.
+          </p>
+
+          <div class="hero-cta-group">
+            <a href="#katalog" class="btn btn-primary">
+              <span>Jelajahi Katalog Tanaman</span> ➔
+            </a>
+            <a href="#kuis" class="btn btn-secondary">
+              <span>🌱 Ikuti Kuis Karakter</span>
+            </a>
+          </div>
+
+          <!-- Statistik Pencapaian Web -->
+          <div class="hero-stats">
+            <div class="stat-item">
+              <h3>16+</h3>
+              <p>Spesies Terverifikasi</p>
+            </div>
+            <div class="stat-item">
+              <h3>5</h3>
+              <p>Kategori Botani</p>
+            </div>
+            <div class="stat-item">
+              <h3>100%</h3>
+              <p>Panduan Asli & Ilmiah</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Visual Hero Interaktif Kanan -->
+        <div class="hero-visual-card">
+          <div class="hero-main-card">
+            <img 
+              src="med/monstera.jpg" 
+              alt="Monstera Deliciosa - Simbol Pertumbuhan"
+              onerror="this.onerror=null; this.src='med/plant-fallback.svg';"
+            />
+            <div class="hero-card-caption">
+              <h4>Monstera Deliciosa</h4>
+              <p>"Bertumbuh tinggi tanpa menghalangi cahaya tunas di bawah naungan."</p>
+            </div>
+          </div>
+          <div class="hero-badge-float">
+            <div class="badge-float-icon">💡</div>
+            <div>
+              <strong>Kearifan Botani</strong>
+              <span>Setiap tanaman punya pesan moral</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         3. KUTIPAN FILOSOFI HARIAN (QUOTE BANNER)
+         ====================================================================== -->
+    <section class="quote-banner-section">
+      <div class="container">
+        <div class="quote-banner-card">
+          <span class="quote-tag">✦ Filosofi Tanaman Hari Ini</span>
+          <p class="quote-text" id="quote-text">
+            “Belajarlah dari tanaman: ia tumbuh dalam kesunyian, berakar dalam kerendahan hati, dan mekar untuk memberi keindahan bagi semesta.”
+          </p>
+          <div class="quote-footer">
+            <span class="quote-author" id="quote-author">— Filosofi Botani (Monstera & Anggrek)</span>
+            <button class="quote-shuffle-btn" id="quote-shuffle-btn" title="Ganti Kutipan Filosofi">
+              <span>Acak Kutipan</span> 🔄
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         4. KATALOG TANAMAN UTAMA (FILTER, SEARCH & GRID)
+         ====================================================================== -->
+    <section class="catalog-section" id="katalog">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Katalog Botani Lengkap</span>
+          <h2 class="section-title">Eksplorasi Ragam Spesies Tanaman</h2>
+          <p class="section-subtitle">
+            Telusuri jenis tanaman berdasarkan karakteristik daun, bunga, sukulen, maupun rempah herbal. Temukan filosofi simbolis dan tata cara merawatnya.
+          </p>
+        </div>
+
+        <!-- Area Kontrol & Penyaringan -->
+        <div class="filter-wrapper">
+          <!-- Input Pencarian Real-Time -->
+          <div class="search-input-group">
+            <span class="search-icon">🔍</span>
+            <input 
+              type="text" 
+              id="search-input" 
+              class="search-input" 
+              placeholder="Cari nama tanaman (contoh: Monstera, Melati, sukulen, lidah buaya)..." 
+              autocomplete="off"
+            />
+            <button class="search-clear-btn" id="search-clear-btn" title="Hapus pencarian">&times;</button>
+          </div>
+
+          <!-- Filter Kategori Tombol Pill -->
+          <div class="filter-categories">
+            <button class="category-pill active" data-category="semua">Semua Kategori</button>
+            <button class="category-pill" data-category="daun">🍃 Hias Daun</button>
+            <button class="category-pill" data-category="bunga">🌸 Hias Bunga</button>
+            <button class="category-pill" data-category="sukulen">🌵 Sukulen & Kaktus</button>
+            <button class="category-pill" data-category="herbal">🌱 Herbal & Obat</button>
+            <button class="category-pill" data-category="bonsai">🪴 Seni Bonsai</button>
+          </div>
+
+          <!-- Dropdown Filter Tambahan -->
+          <div class="filter-sub-row">
+            <div class="filter-dropdowns">
+              <!-- Filter Tingkat Kesulitan -->
+              <select id="filter-difficulty" class="select-control" aria-label="Filter Tingkat Kesulitan">
+                <option value="semua">Semua Kesulitan</option>
+                <option value="sangat-mudah">Sangat Mudah (Pemula Total)</option>
+                <option value="mudah">Mudah</option>
+                <option value="menengah">Menengah</option>
+                <option value="mahir">Mahir (Perlu Ketelatenan)</option>
+              </select>
+
+              <!-- Filter Kebutuhan Cahaya -->
+              <select id="filter-light" class="select-control" aria-label="Filter Kebutuhan Cahaya">
+                <option value="semua">Semua Tingkat Cahaya</option>
+                <option value="teduh">Teduh / Minim Cahaya</option>
+                <option value="sedang">Terang Tidak Langsung</option>
+                <option value="terik">Matahari Terik Langsung</option>
+              </select>
+
+              <!-- Urutkan -->
+              <select id="sort-select" class="select-control" aria-label="Urutkan Tanaman">
+                <option value="default">Urutan Standar</option>
+                <option value="name-asc">Nama (A - Z)</option>
+                <option value="name-desc">Nama (Z - A)</option>
+                <option value="difficulty">Tingkat Kemudahan</option>
+              </select>
+            </div>
+
+            <!-- Penghitung Hasil -->
+            <div class="results-count" id="results-count">
+              Memuat data tanaman...
+            </div>
+          </div>
+        </div>
+
+        <!-- Grid Kartu Tanaman (Dirender Dinamis oleh JavaScript) -->
+        <div class="plants-grid" id="plants-grid">
+          <!-- Kartu-kartu tanaman akan dirender di sini melalui app.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         5. SECTION FILOSOFI TANAMAN & KEARIFAN HIDUP
+         ====================================================================== -->
+    <section class="philosophy-section" id="filosofi">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Kearifan Alam Semesta</span>
+          <h2 class="section-title">Filosofi Tanaman & Pelajaran Kehidupan</h2>
+          <p class="section-subtitle">
+            Tanaman bukan sekadar pemanis dekorasi ruangan. Di balik pertumbuhan setiap cabang dan akar, tersembunyi hukum alam yang selaras dengan perjalanan rohani dan mental manusia.
+          </p>
+        </div>
+
+        <div class="philosophy-grid">
+          <!-- Kartu Filosofi 1: Biophilia -->
+          <div class="philosophy-card">
+            <div class="philosophy-icon-wrap">🌿</div>
+            <h3>Hipotesis Biophilia: Keterikatan Manusia & Alam</h3>
+            <p>
+              Secara evolusioner, otak dan jiwa manusia dirancang untuk berdampingan dengan kehijauan flora. Merawat tanaman terbukti secara klinis menurunkan hormon kortisol (stres), meningkatkan konsentrasi kognitif, serta menumbuhkan rasa kasih sayang dan welas asih dalam kehidupan modern.
+            </p>
+            <div class="philosophy-quote-highlight">
+              "Ketika kita menyirami tanaman, kita sesungguhnya sedang menyirami kelembutan di dalam sanubari kita sendiri."
+            </div>
+          </div>
+
+          <!-- Kartu Filosofi 2: Wabi-Sabi & Bonsai -->
+          <div class="philosophy-card">
+            <div class="philosophy-icon-wrap">🪴</div>
+            <h3>Seni Wabi-Sabi: Keindahan Ketidaksempurnaan</h3>
+            <p>
+              Pada seni kerdil pohon bonsai, ranting yang meliuk bengkok dan bekas luka kawat pemangkasan bukanlah aib, melainkan bukti kedewasaan dan ketahanan menghadapi waktu. Filosofi ini mengajarkan kita menerima kerapuhan dan ketidaksempurnaan diri sebagai karya seni yang bernilai luhur.
+            </p>
+            <div class="philosophy-quote-highlight">
+              "Kekuatan sebuah pohon tidak dinilai dari kemulusan kulit batangnya, melainkan seberapa kuat ia bertahan dari pahatan masa lalu."
+            </div>
+          </div>
+
+          <!-- Kartu Filosofi 3: Kearifan Budaya Nusantara -->
+          <div class="philosophy-card">
+            <div class="philosophy-icon-wrap">🌸</div>
+            <h3>Puspa Nusantara & Simbol Ketulusan Budi</h3>
+            <p>
+              Nenek moyang Indonesia menjadikan bunga melati sebagai Puspa Bangsa karena sifatnya yang harum semerbak meski berukuran mungil dan bersahaja. Berdampingan dengan pohon beringin yang melambangkan kerindangan mengayomi, tanaman mencerminkan cita-cita luhur gotong royong dan kesucian niat.
+            </p>
+            <div class="philosophy-quote-highlight">
+              "Kebaikan sejati laksana aroma melati: tidak berteriak untuk didengar, namun wanginya menyejukkan siapa saja yang mendekat."
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         6. PANDUAN RAWAT & 4 PILAR UTAMA BOTANI
+         ====================================================================== -->
+    <section class="care-section" id="panduan">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Dasar-Dasar Botani Praktis</span>
+          <h2 class="section-title">4 Pilar Utama Seni Merawat Tanaman</h2>
+          <p class="section-subtitle">
+            Tanaman tidak membutuhkan "tangan dingin", melainkan pemahaman ilmiah yang tepat mengenai kebutuhan biologis alaminya.
+          </p>
+        </div>
+
+        <!-- 4 Pilar Grid -->
+        <div class="pillars-grid">
+          <div class="pillar-card">
+            <div class="pillar-num">01</div>
+            <h3>Kunci Pencahayaan</h3>
+            <p>
+              Pahami perbedaan <em>Direct Sun</em> (matahari terik langsung), <em>Bright Indirect</em> (terang tersaring jendela), dan <em>Low Light</em> (teduh redup). Putar pot tanaman setiap 2 minggu agar tumbuh simetris ke arah cahaya.
+            </p>
+          </div>
+
+          <div class="pillar-card">
+            <div class="pillar-num">02</div>
+            <h3>Seni Menyiram (Finger Test)</h3>
+            <p>
+              Jangan menyiram berdasarkan kalender kaku. Masukkan jari tangan sedalam 2-3 cm ke dalam tanah. Bila terasa basah/dingin, tunda penyiraman. 90% kematian tanaman indoor disebabkan oleh kelebihan air (overwatering), bukan dehidrasi!
+            </p>
+          </div>
+
+          <div class="pillar-card">
+            <div class="pillar-num">03</div>
+            <h3>Porositas Media Tanam</h3>
+            <p>
+              Akar tanaman membutuhkan oksigen untuk bernapas. Gunakan media berpori dengan campuran sekam bakar, perlit, pumice, dan cocopeat. Pastikan pot selalu memiliki lubang drainase lancar di bagian bawahnya.
+            </p>
+          </div>
+
+          <div class="pillar-card">
+            <div class="pillar-num">04</div>
+            <h3>Nutrisi & Pemupukan (N-P-K)</h3>
+            <p>
+              Unsur <strong>N</strong> (Nitrogen) untuk kehijauan daun, <strong>P</strong> (Fosfor) untuk perakaran dan pembungaan, serta <strong>K</strong> (Kalium) untuk kekebalan penyakit. Berikan pupuk seimbang secara teratur dengan dosis sedang.
+            </p>
+          </div>
+        </div>
+
+        <!-- Tabel Komparasi Diagnosis Penyakit Tanaman -->
+        <div class="diagnosis-container">
+          <h3>🩺 Panduan Cepat Diagnosis Gejala Tanaman</h3>
+          <p>Kenali tanda-tanda stres pada tanaman kesayangan Anda sebelum terlambat:</p>
+
+          <div class="table-responsive">
+            <table class="diagnosis-table">
+              <thead>
+                <tr>
+                  <th>Gejala Fisik</th>
+                  <th>Kemungkinan Penyebab</th>
+                  <th>Tingkat Urgensi</th>
+                  <th>Langkah Tindakan Solutif</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Daun Menguning & Lembek di Bagian Bawah</strong></td>
+                  <td>Kelebihan air (Overwatering) / Genangan busuk akar</td>
+                  <td><span class="badge-status danger">Tinggi (Kritis)</span></td>
+                  <td>Segera hentikan siram, bongkar pot, potong akar hitam busuk, ganti media tanam baru yang porous.</td>
+                </tr>
+                <tr>
+                  <td><strong>Ujung Daun Kering & Rapuh Kecokelatan</strong></td>
+                  <td>Kelembapan udara rendah (Dry Air) atau air mengandung kaporit tinggi</td>
+                  <td><span class="badge-status warning">Sedang</span></td>
+                  <td>Gunakan humidifier / semprot kabut daun, serta endapkan air keran minimal 24 jam sebelum disiramkan.</td>
+                </tr>
+                <tr>
+                  <td><strong>Batang Tumbuh Kurus & Memanjang Aneh</strong></td>
+                  <td>Etiolasi (Kekurangan intensitas cahaya matahari)</td>
+                  <td><span class="badge-status info">Perlu Penyesuaian</span></td>
+                  <td>Pindahkan secara bertahap ke area yang lebih terang dekat jendela agar fotosintesis optimal.</td>
+                </tr>
+                <tr>
+                  <td><strong>Muncul Bercak Gosong Kering pada Permukaan Daun</strong></td>
+                  <td>Sunburn (Terbakar sinar matahari siang langsung secara mendadak)</td>
+                  <td><span class="badge-status warning">Sedang</span></td>
+                  <td>Pindahkan ke area teduh berdifusi dan potong helai daun yang terbakar parah.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         7. FITUR INTERAKTIF: KUIS TANAMAN KARAKTERMU
+         ====================================================================== -->
+    <section class="quiz-section" id="kuis">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Fitur Interaktif Cerdas</span>
+          <h2 class="section-title">Temukan Tanaman yang Cocok dengan Karaktermu</h2>
+          <p class="section-subtitle">
+            Jawab 4 pertanyaan interaktif seputar kepribadian, gaya hidup, dan ruang rumahmu. Algoritma kami akan merekomendasikan tanaman pendamping hidup yang paling serasi.
+          </p>
+        </div>
+
+        <div class="quiz-card">
+          <!-- Progress Bar Kuis -->
+          <div class="quiz-progress-bar">
+            <div class="quiz-progress-fill" id="quiz-progress-fill"></div>
+          </div>
+
+          <!-- Tampilan Pertanyaan Aktif -->
+          <div id="quiz-card-question">
+            <div class="quiz-step-info">
+              <span id="quiz-step-number">Pertanyaan 1 dari 4</span>
+              <span>Kuis Karakter Botani</span>
+            </div>
+
+            <h3 class="quiz-question-title" id="quiz-question-text">
+              Bagaimana pola rutinitas kesibukan harianmu?
+            </h3>
+
+            <!-- Opsi Pilihan Jawaban -->
+            <div class="quiz-options-grid" id="quiz-options-container">
+              <!-- Dirender oleh app.js -->
+            </div>
+
+            <!-- Tombol Navigasi Kuis -->
+            <div class="quiz-actions">
+              <button class="btn btn-secondary" id="quiz-prev-btn" style="visibility: hidden;">
+                ◀ Sebelumnya
+              </button>
+              <button class="btn btn-primary" id="quiz-next-btn" disabled>
+                Lanjut ➔
+              </button>
+            </div>
+          </div>
+
+          <!-- Tampilan Hasil Rekomendasi Kuis -->
+          <div class="quiz-result-view" id="quiz-result-view">
+            <span class="quiz-result-header">🎉 Tanaman Pendamping Karaktermu Adalah:</span>
+            <h3 class="quiz-result-title" id="quiz-result-plant-name">Monstera Deliciosa</h3>
+            <p class="quiz-result-scientific" id="quiz-result-plant-scientific">Monstera deliciosa Liebm.</p>
+
+            <div class="quiz-result-card-detail">
+              <h4>🌿 Mengapa Tanaman Ini Cocok Untukmu?</h4>
+              <p id="quiz-result-philosophy"></p>
+              <div style="margin-top: 1rem; font-size: 0.88rem; color: var(--primary-700);">
+                <strong>Kebutuhan Utama:</strong> <span id="quiz-result-care"></span>
+              </div>
+            </div>
+
+            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+              <button class="btn btn-primary" id="quiz-result-detail-btn">
+                <span>Pelajari Detail Perawatan</span> ➔
+              </button>
+              <button class="btn btn-secondary" id="quiz-restart-btn">
+                <span>Ulangi Kuis</span> 🔄
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         8. FITUR INTERAKTIF: KALKULATOR JADWAL SIRAM
+         ====================================================================== -->
+    <section class="calculator-section" id="kalkulator">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Kalkulator Cerdas</span>
+          <h2 class="section-title">Kalkulator Interval Penyiraman Tanaman</h2>
+          <p class="section-subtitle">
+            Kombinasikan jenis tanaman, lingkungan tempat tinggal, dan kondisi musim untuk menghitung frekuensi penyiraman yang paling akurat.
+          </p>
+        </div>
+
+        <div class="calc-grid">
+          <!-- Formulir Parameter -->
+          <div class="calc-form">
+            <div class="form-group">
+              <label for="calc-plant-select" class="form-label">Pilih Jenis Tanaman:</label>
+              <select id="calc-plant-select" class="form-control">
+                <!-- Diisi otomatis oleh app.js dari database -->
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="calc-env-select" class="form-label">Lokasi / Lingkungan Peletakan:</label>
+              <select id="calc-env-select" class="form-control">
+                <option value="indoor-ac">Indoor Ruangan Ber-AC (Penguapan lambat)</option>
+                <option value="indoor-normal" selected>Indoor Berventilasi Baik (Jendela terbuka)</option>
+                <option value="outdoor-shade">Outdoor Teras Teduh (Semi Naungan)</option>
+                <option value="outdoor-sun">Outdoor Sinar Terik Langsung (Cepat kering)</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="calc-season-select" class="form-label">Kondisi Musim / Cuaca Saat Ini:</label>
+              <select id="calc-season-select" class="form-control">
+                <option value="normal" selected>Cuaca Normal / Pancaroba</option>
+                <option value="hujan">Musim Hujan (Lembap tinggi & basah)</option>
+                <option value="kemarau">Musim Kemarau / Terik Panas (Kering)</option>
+              </select>
+            </div>
+
+            <button class="btn btn-primary" id="calc-submit-btn" style="margin-top: 0.5rem;">
+              <span>Hitung Rekomendasi Jadwal</span> 💧
+            </button>
+          </div>
+
+          <!-- Kotak Hasil Kalkulasi -->
+          <div class="calc-result-box">
+            <div class="calc-result-icon">💧</div>
+            <h3 class="calc-result-title">Hasil Analisis Penyiraman</h3>
+            <div class="calc-result-schedule" id="calc-result-schedule">
+              Siram 1 - 2 Kali Seminggu
+            </div>
+            <div class="calc-result-tips" id="calc-result-tips">
+              Pilih parameter di samping dan klik tombol kalkulasi untuk melihat panduan spesifik.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         9. SECTION KOLEKSI FAVORIT SAYA (LOCALSTORAGE)
+         ====================================================================== -->
+    <section class="favorites-section" id="favorit">
+      <div class="container">
+        <div class="favorites-header-bar">
+          <div>
+            <span class="section-tag">Koleksi Pribadi</span>
+            <h2 class="section-title" style="margin-bottom: 0;">Tanaman Favorit Saya</h2>
+          </div>
+          <button class="btn-clear-favs" id="clear-favs-btn" title="Kosongkan semua favorit">
+            Bersihkan Koleksi 🗑️
+          </button>
+        </div>
+
+        <!-- Grid Favorit -->
+        <div class="plants-grid" id="favorites-grid">
+          <!-- Dirender otomatis oleh app.js -->
+        </div>
+
+        <!-- Tampilan Kosong Jika Belum Ada yang Disimpan -->
+        <div class="empty-state" id="favorites-empty" style="display: none;">
+          <div class="empty-state-icon">🤍</div>
+          <h3>Belum Ada Tanaman Favorit</h3>
+          <p>
+            Klik ikon hati (❤️) pada kartu tanaman di katalog untuk menyimpannya ke koleksi pribadi browser Anda.
+          </p>
+          <a href="#katalog" class="btn btn-primary">Buka Katalog Sekarang</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         10. SECTION KONSULTASI / TANYA PAKAR BOTANI
+         ====================================================================== -->
+    <section class="contact-section" id="konsultasi">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Klinik Botani & Konsultasi</span>
+          <h2 class="section-title">Punya Pertanyaan Seputar Tanaman Anda?</h2>
+          <p class="section-subtitle">
+            Sampaikan gejala tanaman Anda yang sedang sakit, pertanyaan mengenai pemilihan media tanam, atau diskusi filosofi alam.
+          </p>
+        </div>
+
+        <div class="contact-card">
+          <form class="contact-form" id="consultation-form">
+            <div class="form-group">
+              <label for="contact-name" class="form-label">Nama Lengkap:</label>
+              <input type="text" id="contact-name" class="form-control" placeholder="Contoh: Budi Santoso" required />
+            </div>
+
+            <div class="form-group">
+              <label for="contact-email" class="form-label">Alamat Email:</label>
+              <input type="email" id="contact-email" class="form-control" placeholder="nama@email.com" required />
+            </div>
+
+            <div class="form-group">
+              <label for="contact-topic" class="form-label">Topik Pertanyaan / Permasalahan:</label>
+              <select id="contact-topic" class="form-control" required>
+                <option value="Daun Menguning & Busuk Akar">Daun Menguning & Gejala Busuk Akar</option>
+                <option value="Hama & Jamur Putih">Serangan Kutu Putih / Jamur Daun</option>
+                <option value="Rekomendasi Pemilihan Tanaman">Rekomendasi Tanaman Baru untuk Ruangan</option>
+                <option value="Konsultasi Media Tanam">Racikan Media Tanam & Pemupukan</option>
+                <option value="Lainnya">Diskusi Filosofi Botani Lainnya</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="contact-message" class="form-label">Deskripsi Kondisi / Pertanyaan:</label>
+              <textarea 
+                id="contact-message" 
+                class="form-control" 
+                placeholder="Ceritakan kondisi tanaman Anda: lokasi peletakan, intensitas siram, dan perubahan fisik yang terlihat..." 
+                required
+              ></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary" style="width: 100%;">
+              <span>Kirim Formulir Konsultasi</span> ✉️
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ========================================================================
+       11. FOOTER AKADEMIK & MAHASISWA
+       ======================================================================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h3>
+            <span>🌿</span> FloraPedia
+          </h3>
+          <p>
+            Proyek Ensiklopedia & Filosofi Botani orisinal berbasis Vanilla Web Technologies. Dibuat dengan cinta untuk alam semesta dan dedikasi akademis mata kuliah Pemrograman Web 1.
+          </p>
+          <div class="academic-badge">
+            <strong>🎓 Tugas Akhir Kuliah Pemrograman Web 1</strong>
+            <span>100% Desain Asli (HTML5 • CSS3 • JavaScript ES6+)</span>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Navigasi Cepat</h4>
+          <ul class="footer-links">
+            <li><a href="#beranda">Beranda</a></li>
+            <li><a href="#katalog">Katalog Tanaman</a></li>
+            <li><a href="#filosofi">Filosofi Alam</a></li>
+            <li><a href="#panduan">Panduan Merawat</a></li>
+            <li><a href="#kuis">Kuis Karakter</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Fitur Interaktif</h4>
+          <ul class="footer-links">
+            <li><a href="#kalkulator">Kalkulator Jadwal Siram</a></li>
+            <li><a href="#favorit">Koleksi Favorit (LocalStorage)</a></li>
+            <li><a href="#konsultasi">Klinik Konsultasi Botani</a></li>
+            <li><a href="#panduan">Tabel Diagnosis Gejala</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Informasi Mahasiswa</h4>
+          <p style="font-size: 0.88rem; line-height: 1.6; margin-bottom: 0.75rem;">
+            <strong>Nama:</strong> Kang Maman / Mahasiswa<br />
+            <strong>Mata Kuliah:</strong> Pemrograman Web 1<br />
+            <strong>Status:</strong> Tugas Akhir Final (TA)<br />
+            <strong>Prinsip:</strong> Handcrafted Design & Zero Template Copas
+          </p>
+          <div style="font-size: 0.8rem; color: var(--primary-400);">
+            ✓ Semantic HTML5 Structure<br />
+            ✓ Responsive CSS Flex & Grid<br />
+            ✓ Vanilla DOM Manipulation
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 FloraPedia — Kang Maman Plants. Seluruh hak cipta dilindungi.</p>
+        <p>Dirancang & dibangun secara mandiri untuk Tugas Akhir Pemrograman Web 1.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ========================================================================
+       12. MODAL DIALOG DETAIL TANAMAN
+       ======================================================================== -->
+  <div class="modal-overlay" id="plant-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal-container">
+      <button class="modal-close-btn" id="modal-close-btn" aria-label="Tutup jendela modal">&times;</button>
+
+      <div class="modal-hero">
+        <img id="modal-img" src="" alt="Foto Tanaman" onerror="this.onerror=null; this.src='med/plant-fallback.svg';" />
+        <div class="modal-hero-overlay">
+          <div class="modal-title-group">
+            <h2 id="modal-title">Nama Tanaman</h2>
+            <p id="modal-scientific">Nama Ilmiah (Latin)</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal-content-body">
+        <p id="modal-tagline" style="font-weight: 700; color: var(--primary-700); margin-bottom: 1.25rem; font-size: 1.05rem;">
+          Tagline Filosofi
+        </p>
+
+        <!-- Navigasi Tab Modal -->
+        <div class="modal-tabs">
+          <button class="modal-tab-btn active" data-tab="filosofi">🌱 Filosofi & Makna Hidup</button>
+          <button class="modal-tab-btn" data-tab="rawat">💧 Parameter Perawatan Lengkap</button>
+          <button class="modal-tab-btn" data-tab="masalah">⚠️ Diagnosis & Troubleshooting</button>
+        </div>
+
+        <!-- Isi Tab 1: Filosofi -->
+        <div class="modal-tab-pane active" id="tab-filosofi">
+          <div class="modal-philosophy-card">
+            <h4>🌿 Makna Filosofis & Simbolis</h4>
+            <p id="modal-philosophy"></p>
+          </div>
+        </div>
+
+        <!-- Isi Tab 2: Parameter Perawatan -->
+        <div class="modal-tab-pane" id="tab-rawat">
+          <div class="modal-care-grid">
+            <div class="modal-care-item">
+              <h5>💧 Kebutuhan & Jadwal Penyiraman</h5>
+              <p id="modal-watering"></p>
+            </div>
+            <div class="modal-care-item">
+              <h5>☀️ Kebutuhan Paparan Cahaya</h5>
+              <p id="modal-light"></p>
+            </div>
+            <div class="modal-care-item">
+              <h5>🪴 Komposisi Media Tanam (Tanah)</h5>
+              <p id="modal-soil"></p>
+            </div>
+            <div class="modal-care-item">
+              <h5>💨 Suhu & Kelembapan Udara</h5>
+              <p id="modal-humidity"></p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Isi Tab 3: Masalah & Troubleshooting -->
+        <div class="modal-tab-pane" id="tab-masalah">
+          <div class="troubleshoot-box">
+            <h5>⚠️ Masalah Umum & Solusi Praktis:</h5>
+            <p id="modal-troubleshoot"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================================
+       13. FLOATING ELEMENTS (TOAST NOTIFIKASI & BACK TO TOP)
+       ======================================================================== -->
+  <div class="toast-notification" id="toast-notification" role="status" aria-live="polite">
+    <span>🌿</span>
+    <span id="toast-message">Notifikasi</span>
+  </div>
+
+  <button class="back-to-top" id="back-to-top" title="Kembali ke atas" aria-label="Kembali ke atas">
+    ▲
+  </button>
+
+  <!-- ========================================================================
+       14. SKRIP JAVASCRIPT MURNI (VANILLA ES6+)
+       ======================================================================== -->
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
