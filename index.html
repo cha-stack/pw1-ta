@@ -3,9 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="FloraPedia - Ensiklopedia interaktif jenis tanaman, filosofi kehidupan mendalam, dan panduan perawatan botani. Tugas Akhir Pemrograman Web 1." />
   <meta name="author" content="Kang Maman Plants - Mahasiswa Pemrograman Web 1" />
-  <title>FloraPedia — Ensiklopedia, Filosofi & Seni Merawat Tanaman</title>
+  <title>Kang maman plants</title>
 
   <!-- Google Fonts: Plus Jakarta Sans & Playfair Display untuk Sentuhan Elegan -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -23,7 +22,7 @@
   <header class="site-header">
     <div class="container navbar">
       <!-- Logo & Brand Identitas -->
-      <a href="#beranda" class="brand-logo" aria-label="Beranda FloraPedia">
+      <a href="#beranda" class="brand-logo" aria-label="Beranda">
         <div class="brand-icon">
           <!-- SVG Ikon Daun Organik -->
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -32,7 +31,6 @@
           </svg>
         </div>
         <div>
-          <span>FloraPedia</span>
           <span class="brand-text-sub">Kang Maman Plants</span>
         </div>
       </a>
@@ -46,7 +44,6 @@
           <li><a href="#panduan" class="nav-link">Panduan Rawat</a></li>
           <li><a href="#kuis" class="nav-link">Kuis Karakter</a></li>
           <li><a href="#kalkulator" class="nav-link">Kalkulator Siram</a></li>
-          <li><a href="#favorit" class="nav-link">Koleksi Saya</a></li>
           <li><a href="#konsultasi" class="nav-link">Konsultasi</a></li>
         </ul>
       </nav>
@@ -129,13 +126,6 @@
             <div class="hero-card-caption">
               <h4>Monstera Deliciosa</h4>
               <p>"Bertumbuh tinggi tanpa menghalangi cahaya tunas di bawah naungan."</p>
-            </div>
-          </div>
-          <div class="hero-badge-float">
-            <div class="badge-float-icon">💡</div>
-            <div>
-              <strong>Kearifan Botani</strong>
-              <span>Setiap tanaman punya pesan moral</span>
             </div>
           </div>
         </div>
@@ -526,37 +516,6 @@
       </div>
     </section>
 
-    <!-- ======================================================================
-         9. SECTION KOLEKSI FAVORIT SAYA (LOCALSTORAGE)
-         ====================================================================== -->
-    <section class="favorites-section" id="favorit">
-      <div class="container">
-        <div class="favorites-header-bar">
-          <div>
-            <span class="section-tag">Koleksi Pribadi</span>
-            <h2 class="section-title" style="margin-bottom: 0;">Tanaman Favorit Saya</h2>
-          </div>
-          <button class="btn-clear-favs" id="clear-favs-btn" title="Kosongkan semua favorit">
-            Bersihkan Koleksi 🗑️
-          </button>
-        </div>
-
-        <!-- Grid Favorit -->
-        <div class="plants-grid" id="favorites-grid">
-          <!-- Dirender otomatis oleh app.js -->
-        </div>
-
-        <!-- Tampilan Kosong Jika Belum Ada yang Disimpan -->
-        <div class="empty-state" id="favorites-empty" style="display: none;">
-          <div class="empty-state-icon">🤍</div>
-          <h3>Belum Ada Tanaman Favorit</h3>
-          <p>
-            Klik ikon hati (❤️) pada kartu tanaman di katalog untuk menyimpannya ke koleksi pribadi browser Anda.
-          </p>
-          <a href="#katalog" class="btn btn-primary">Buka Katalog Sekarang</a>
-        </div>
-      </div>
-    </section>
 
     <!-- ======================================================================
          10. SECTION KONSULTASI / TANYA PAKAR BOTANI
@@ -621,7 +580,7 @@
       <div class="footer-grid">
         <div class="footer-brand">
           <h3>
-            <span>🌿</span> FloraPedia
+            <span>🌿</span> KangMamanPlants
           </h3>
           <p>
             Proyek Ensiklopedia & Filosofi Botani orisinal berbasis Vanilla Web Technologies. Dibuat dengan cinta untuk alam semesta dan dedikasi akademis mata kuliah Pemrograman Web 1.
@@ -647,7 +606,6 @@
           <h4>Fitur Interaktif</h4>
           <ul class="footer-links">
             <li><a href="#kalkulator">Kalkulator Jadwal Siram</a></li>
-            <li><a href="#favorit">Koleksi Favorit (LocalStorage)</a></li>
             <li><a href="#konsultasi">Klinik Konsultasi Botani</a></li>
             <li><a href="#panduan">Tabel Diagnosis Gejala</a></li>
           </ul>
@@ -670,7 +628,7 @@
       </div>
 
       <div class="footer-bottom">
-        <p>&copy; 2026 FloraPedia — Kang Maman Plants. Seluruh hak cipta dilindungi.</p>
+        <p>&copy; 2026 — Kang Maman Plants. Seluruh hak cipta dilindungi.</p>
         <p>Dirancang & dibangun secara mandiri untuk Tugas Akhir Pemrograman Web 1.</p>
       </div>
     </div>

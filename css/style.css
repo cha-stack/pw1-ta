@@ -1410,32 +1410,6 @@ button {
   border: 1px solid var(--border-subtle);
 }
 
-/* --- 11. FAVORIT / KOLEKSI SAYA --- */
-.favorites-section {
-  padding: 5rem 0;
-  background-color: var(--bg-subtle);
-}
-
-.favorites-header-bar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 2rem;
-}
-
-.btn-clear-favs {
-  font-size: 0.85rem;
-  font-weight: 600;
-  color: #e63946;
-  padding: 0.45rem 0.9rem;
-  border-radius: var(--radius-full);
-  border: 1px solid rgba(230, 57, 70, 0.3);
-}
-
-.btn-clear-favs:hover {
-  background-color: #ffebee;
-}
-
 /* --- 12. FORM KONSULTASI & TANYA PAKAR --- */
 .contact-section {
   padding: 5rem 0;

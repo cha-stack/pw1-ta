@@ -384,62 +384,6 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   /* ==========================================================================
-     4. SISTEM KOLEKSI FAVORIT (BOOKMARK & LOCAL STORAGE)
-     ========================================================================== */
-  function toggleFavorite(plantId) {
-    const index = favoriteIds.indexOf(plantId);
-    const plant = plantsData.find((p) => p.id === plantId);
-    const plantName = plant ? plant.name : "Tanaman";
-
-    if (index > -1) {
-      favoriteIds.splice(index, 1);
-      showToast(`${plantName} dihapus dari koleksi favorit`);
-    } else {
-      favoriteIds.push(plantId);
-      showToast(`❤️ ${plantName} ditambahkan ke koleksi favorit!`);
-    }
-
-    localStorage.setItem("florapedia_favs", JSON.stringify(favoriteIds));
-    updateFavoriteUI();
-    filterAndRenderPlants(); // Perbarui ikon di kartu katalog
-  }
-
-  function updateFavoriteUI() {
-    // Update Badge Angka di Navigasi
-    if (favCounterNav) {
-      favCounterNav.textContent = favoriteIds.length;
-      favCounterNav.style.display = favoriteIds.length > 0 ? "inline-block" : "none";
-    }
-
-    // Render di Section Koleksi Favorit
-    if (!favGrid || !favEmpty) return;
-
-    const favoritePlants = plantsData.filter((p) => favoriteIds.includes(p.id));
-
-    if (favoritePlants.length === 0) {
-      favGrid.style.display = "none";
-      favEmpty.style.display = "block";
-    } else {
-      favGrid.style.display = "grid";
-      favEmpty.style.display = "none";
-      renderPlantsList(favoritePlants, favGrid);
-    }
-  }
-
-  if (clearFavsBtn) {
-    clearFavsBtn.addEventListener("click", () => {
-      if (favoriteIds.length === 0) return;
-      if (confirm("Apakah Anda yakin ingin mengosongkan semua daftar tanaman favorit?")) {
-        favoriteIds = [];
-        localStorage.setItem("florapedia_favs", JSON.stringify(favoriteIds));
-        updateFavoriteUI();
-        filterAndRenderPlants();
-        showToast("Semua koleksi favorit telah dibersihkan");
-      }
-    });
-  }
-
-  /* ==========================================================================
      5. KUTIPAN FILOSOFI HARIAN (QUOTE SHUFFLE)
      ========================================================================== */
   let currentQuoteIndex = 0;
