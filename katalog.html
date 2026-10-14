@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="author" content="Kang Maman Plants - Mahasiswa Pemrograman Web 1" />
+  <title>Kang Maman Plants | Katalog Tanaman</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+<header class="site-header">
+    <div class="container navbar">
+      <!-- Logo & Brand Identitas -->
+      <a href="index.html" class="brand-logo" aria-label="Beranda">
+        <div class="brand-icon">
+          <!-- SVG Ikon Daun Organik -->
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"></path>
+            <path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"></path>
+          </svg>
+        </div>
+        <!-- ini buat logo diatas kirinya -->
+        <div>
+          <span class="brand-text-sub">Kang Maman Plants</span>
+        </div>
+      </a>
+
+      <!-- Menu Navigasi Navigasi -->
+      <nav>
+        <ul class="nav-links" id="nav-links">
+          <li><a href="index.html" class="nav-link">Beranda</a></li>
+          <li><a href="katalog.html" class="nav-link active">Katalog Tanaman</a></li>
+          <li><a href="filosofi.html" class="nav-link">Filosofi & Makna</a></li>
+          <li><a href="panduan.html" class="nav-link">Panduan Rawat</a></li>
+        </ul>
+      </nav>
+
+      <!-- Aksi Navigasi (Tema & Counter) -->
+      <div class="nav-actions">
+
+        <!-- Tombol Ganti Tema (Dark / Light Mode) -->
+        <button class="icon-btn" id="theme-toggle-btn" title="Ganti Tema Siang/Malam" aria-label="Ganti Tema">
+          <span id="theme-icon">🌙</span>
+        </button>
+
+        <!-- Tombol Hamburger Mobile -->
+        <button class="hamburger-btn" id="hamburger-btn" aria-label="Buka Menu Navigasi">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+  <main>
+<section class="catalog-section" id="katalog">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Katalog Botani Lengkap</span>
+          <p class="section-subtitle">
+            Telusuri jenis tanaman berdasarkan karakteristik daun, bunga, sukulen, maupun rempah herbal. Temukan filosofi simbolis dan tata cara merawatnya.
+          </p>
+        </div>
+
+        <!-- Area Kontrol & Penyaringan -->
+        <div class="filter-wrapper">
+          <!-- Input Pencarian Real-Time -->
+          <div class="search-input-group">
+            <span class="search-icon">🔍</span>
+            <input 
+              type="text" 
+              id="search-input" 
+              class="search-input" 
+              placeholder="Cari nama tanaman (contoh: Monstera, Melati, sukulen, lidah buaya)..." 
+              autocomplete="off"
+            />
+            <button class="search-clear-btn" id="search-clear-btn" title="Hapus pencarian">&times;</button>
+          </div>
+
+          <!-- Filter Kategori Tombol Pill -->
+          <div class="filter-categories">
+            <button class="category-pill active" data-category="semua">Semua Kategori</button>
+            <button class="category-pill" data-category="daun">Hias Daun</button>
+            <button class="category-pill" data-category="bunga">Hias Bunga</button>
+            <button class="category-pill" data-category="sukulen">Sukulen & Kaktus</button>
+            <button class="category-pill" data-category="herbal">Herbal & Obat</button>
+            <button class="category-pill" data-category="bonsai">Seni Bonsai</button>
+          </div>
+
+          <!-- Dropdown Filter Tambahan -->
+          <div class="filter-sub-row">
+            <div class="filter-dropdowns">
+              <!-- Filter Tingkat Kesulitan -->
+              <select id="filter-difficulty" class="select-control" aria-label="Filter Tingkat Kesulitan">
+                <option value="semua">Semua Kesulitan</option>
+                <option value="sangat-mudah">Sangat Mudah (Pemula Total)</option>
+                <option value="mudah">Mudah</option>
+                <option value="menengah">Menengah</option>
+                <option value="mahir">Mahir (Perlu Ketelatenan)</option>
+              </select>
+
+              <!-- Filter Kebutuhan Cahaya -->
+              <select id="filter-light" class="select-control" aria-label="Filter Kebutuhan Cahaya">
+                <option value="semua">Semua Tingkat Cahaya</option>
+                <option value="teduh">Teduh / Minim Cahaya</option>
+                <option value="sedang">Terang Tidak Langsung</option>
+                <option value="terik">Matahari Terik Langsung</option>
+              </select>
+
+              <!-- Urutkan -->
+              <select id="sort-select" class="select-control" aria-label="Urutkan Tanaman">
+                <option value="default">Urutan Standar</option>
+                <option value="name-asc">Nama (A - Z)</option>
+                <option value="name-desc">Nama (Z - A)</option>
+                <option value="difficulty">Tingkat Kemudahan</option>
+              </select>
+            </div>
+
+            <!-- Penghitung Hasil -->
+            <div class="results-count" id="results-count">
+              Memuat data tanaman...
+            </div>
+          </div>
+        </div>
+
+        <!-- Grid Kartu Tanaman (Dirender Dinamis oleh JavaScript) -->
+        <div class="plants-grid" id="plants-grid">
+          <!-- Kartu-kartu tanaman akan dirender di sini melalui app.js -->
+        </div>
+      </div>
+    </section>
+  </main>
+<footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h3>
+            <span>🌿</span> KangMamanPlants
+          </h3>
+          <h4>Informasi Mahasiswa</h4>
+          <p style="font-size: 0.88rem; line-height: 1.6; margin-bottom: 0.75rem;">
+            <strong>Nama:</strong> Aisyah Nurul Hidayah<br />
+            <strong>NIM:</strong> 241011401239<br />
+            <strong>Mata Kuliah:</strong> Pemrograman Web 1<br />
+            <strong>Status:</strong> Tugas Akhir Pengembangan<br />
+          </p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 — Kang Maman Plants. Seluruh hak cipta dilindungi.</p>
+      </div>
+    </div>
+  </footer>
+<button class="back-to-top" id="back-to-top" title="Kembali ke atas" aria-label="Kembali ke atas">
+    ▲
+  </button>
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

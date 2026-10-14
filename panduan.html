@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="author" content="Kang Maman Plants - Mahasiswa Pemrograman Web 1" />
+  <title>Kang Maman Plants | Panduan Rawat</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+<header class="site-header">
+    <div class="container navbar">
+      <!-- Logo & Brand Identitas -->
+      <a href="index.html" class="brand-logo" aria-label="Beranda">
+        <div class="brand-icon">
+          <!-- SVG Ikon Daun Organik -->
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"></path>
+            <path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"></path>
+          </svg>
+        </div>
+        <!-- ini buat logo diatas kirinya -->
+        <div>
+          <span class="brand-text-sub">Kang Maman Plants</span>
+        </div>
+      </a>
+
+      <!-- Menu Navigasi Navigasi -->
+      <nav>
+        <ul class="nav-links" id="nav-links">
+          <li><a href="index.html" class="nav-link">Beranda</a></li>
+          <li><a href="katalog.html" class="nav-link">Katalog Tanaman</a></li>
+          <li><a href="filosofi.html" class="nav-link">Filosofi & Makna</a></li>
+          <li><a href="panduan.html" class="nav-link active">Panduan Rawat</a></li>
+        </ul>
+      </nav>
+
+      <!-- Aksi Navigasi (Tema & Counter) -->
+      <div class="nav-actions">
+
+        <!-- Tombol Ganti Tema (Dark / Light Mode) -->
+        <button class="icon-btn" id="theme-toggle-btn" title="Ganti Tema Siang/Malam" aria-label="Ganti Tema">
+          <span id="theme-icon">🌙</span>
+        </button>
+
+        <!-- Tombol Hamburger Mobile -->
+        <button class="hamburger-btn" id="hamburger-btn" aria-label="Buka Menu Navigasi">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+  <main>
+<section class="care-section" id="panduan">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Dasar-Dasar Botani Praktis</span>
+          <h2 class="section-title">4 Pilar Utama Seni Merawat Tanaman</h2>
+          <p class="section-subtitle">
+            Tanaman tidak membutuhkan "tangan dingin", melainkan pemahaman ilmiah yang tepat mengenai kebutuhan biologis alaminya.
+          </p>
+        </div>
+
+        <!-- 4 Pilar Grid -->
+        <div class="pillars-grid">
+          <div class="pillar-card">
+            <div class="pillar-num">01</div>
+            <h3>Kunci Pencahayaan</h3>
+            <p>
+              Pahami perbedaan <em>Direct Sun</em> (matahari terik langsung), <em>Bright Indirect</em> (terang tersaring jendela), dan <em>Low Light</em> (teduh redup). Putar pot tanaman setiap 2 minggu agar tumbuh simetris ke arah cahaya.
+            </p>
+          </div>
+
+          <div class="pillar-card">
+            <div class="pillar-num">02</div>
+            <h3>Seni Menyiram (Finger Test)</h3>
+            <p>
+              Jangan menyiram berdasarkan kalender kaku. Masukkan jari tangan sedalam 2-3 cm ke dalam tanah. Bila terasa basah/dingin, tunda penyiraman. 90% kematian tanaman indoor disebabkan oleh kelebihan air (overwatering), bukan dehidrasi!
+            </p>
+          </div>
+
+          <div class="pillar-card">
+            <div class="pillar-num">03</div>
+            <h3>Porositas Media Tanam</h3>
+            <p>
+              Akar tanaman membutuhkan oksigen untuk bernapas. Gunakan media berpori dengan campuran sekam bakar, perlit, pumice, dan cocopeat. Pastikan pot selalu memiliki lubang drainase lancar di bagian bawahnya.
+            </p>
+          </div>
+
+          <div class="pillar-card">
+            <div class="pillar-num">04</div>
+            <h3>Nutrisi & Pemupukan (N-P-K)</h3>
+            <p>
+              Unsur <strong>N</strong> (Nitrogen) untuk kehijauan daun, <strong>P</strong> (Fosfor) untuk perakaran dan pembungaan, serta <strong>K</strong> (Kalium) untuk kekebalan penyakit. Berikan pupuk seimbang secara teratur dengan dosis sedang.
+            </p>
+          </div>
+        </div>
+
+        <!-- Tabel Komparasi Diagnosis Penyakit Tanaman -->
+        <div class="diagnosis-container">
+          <h3>🩺 Panduan Cepat Diagnosis Gejala Tanaman</h3>
+          <p>Kenali tanda-tanda stres pada tanaman kesayangan Anda sebelum terlambat:</p>
+
+          <div class="table-responsive">
+            <table class="diagnosis-table">
+              <thead>
+                <tr>
+                  <th>Gejala Fisik</th>
+                  <th>Kemungkinan Penyebab</th>
+                  <th>Tingkat Urgensi</th>
+                  <th>Langkah Tindakan Solutif</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Daun Menguning & Lembek di Bagian Bawah</strong></td>
+                  <td>Kelebihan air (Overwatering) / Genangan busuk akar</td>
+                  <td><span class="badge-status danger">Tinggi (Kritis)</span></td>
+                  <td>Segera hentikan siram, bongkar pot, potong akar hitam busuk, ganti media tanam baru yang porous.</td>
+                </tr>
+                <tr>
+                  <td><strong>Ujung Daun Kering & Rapuh Kecokelatan</strong></td>
+                  <td>Kelembapan udara rendah (Dry Air) atau air mengandung kaporit tinggi</td>
+                  <td><span class="badge-status warning">Sedang</span></td>
+                  <td>Gunakan humidifier / semprot kabut daun, serta endapkan air keran minimal 24 jam sebelum disiramkan.</td>
+                </tr>
+                <tr>
+                  <td><strong>Batang Tumbuh Kurus & Memanjang Aneh</strong></td>
+                  <td>Etiolasi (Kekurangan intensitas cahaya matahari)</td>
+                  <td><span class="badge-status info">Perlu Penyesuaian</span></td>
+                  <td>Pindahkan secara bertahap ke area yang lebih terang dekat jendela agar fotosintesis optimal.</td>
+                </tr>
+                <tr>
+                  <td><strong>Muncul Bercak Gosong Kering pada Permukaan Daun</strong></td>
+                  <td>Sunburn (Terbakar sinar matahari siang langsung secara mendadak)</td>
+                  <td><span class="badge-status warning">Sedang</span></td>
+                  <td>Pindahkan ke area teduh berdifusi dan potong helai daun yang terbakar parah.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+<footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h3>
+            <span>🌿</span> KangMamanPlants
+          </h3>
+          <h4>Informasi Mahasiswa</h4>
+          <p style="font-size: 0.88rem; line-height: 1.6; margin-bottom: 0.75rem;">
+            <strong>Nama:</strong> Aisyah Nurul Hidayah<br />
+            <strong>NIM:</strong> 241011401239<br />
+            <strong>Mata Kuliah:</strong> Pemrograman Web 1<br />
+            <strong>Status:</strong> Tugas Akhir Pengembangan<br />
+          </p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 — Kang Maman Plants. Seluruh hak cipta dilindungi.</p>
+      </div>
+    </div>
+  </footer>
+<button class="back-to-top" id="back-to-top" title="Kembali ke atas" aria-label="Kembali ke atas">
+    ▲
+  </button>
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

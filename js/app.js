@@ -137,7 +137,6 @@ document.addEventListener("DOMContentLoaded", () => {
     if (plantsArray.length === 0) {
       targetContainer.innerHTML = `
         <div class="empty-state">
-          <div class="empty-state-icon">🌱</div>
           <h3>Tidak Ada Tanaman yang Cocok</h3>
           <p>Coba gunakan kata kunci lain atau ubah filter kategori pencarian Anda.</p>
           <button class="btn btn-primary" id="btn-reset-filter">Reset Filter</button>
@@ -188,6 +187,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 </div>
               </div>
 
+              
               <div class="plant-card-footer">
                 <button class="btn-detail" data-detail-id="${plant.id}">
                   <span>Pelajari Filosofi & Rawat</span> ➔
@@ -302,11 +302,6 @@ document.addEventListener("DOMContentLoaded", () => {
     modalTagline.textContent = plant.tagline;
 
     modalPhilosophy.textContent = plant.philosophy;
-    modalWatering.textContent = plant.careGuide.watering;
-    modalLight.textContent = plant.careGuide.light;
-    modalSoil.textContent = plant.careGuide.soil;
-    modalHumidity.textContent = plant.careGuide.humidity;
-    modalTroubleshoot.textContent = plant.careGuide.troubleshooting;
 
     // Reset tab ke tab pertama (Filosofi)
     modalTabBtns.forEach((btn, idx) => btn.classList.toggle("active", idx === 0));
@@ -373,156 +368,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
   showQuote(currentQuoteIndex);
-
-  /* ==========================================================================
-     6. FITUR INTERAKTIF: KUIS TANAMAN KARAKTERMU
-     ========================================================================== */
-  let quizCurrentIndex = 0;
-  const userAnswers = [];
-
-  const quizCardQuestion = document.getElementById("quiz-card-question");
-  const quizResultView = document.getElementById("quiz-result-view");
-  const quizStepNumber = document.getElementById("quiz-step-number");
-  const quizProgressFill = document.getElementById("quiz-progress-fill");
-  const quizQuestionText = document.getElementById("quiz-question-text");
-  const quizOptionsContainer = document.getElementById("quiz-options-container");
-  const quizNextBtn = document.getElementById("quiz-next-btn");
-  const quizPrevBtn = document.getElementById("quiz-prev-btn");
-  const quizRestartBtn = document.getElementById("quiz-restart-btn");
-
-  // Hasil Kuis DOM
-  const quizResultPlantName = document.getElementById("quiz-result-plant-name");
-  const quizResultPlantScientific = document.getElementById("quiz-result-plant-scientific");
-  const quizResultPhilosophy = document.getElementById("quiz-result-philosophy");
-  const quizResultCare = document.getElementById("quiz-result-care");
-  const quizResultDetailBtn = document.getElementById("quiz-result-detail-btn");
-
-  function renderQuizQuestion() {
-    if (!quizQuestionText || !quizOptionsContainer) return;
-
-    const q = quizQuestions[quizCurrentIndex];
-    if (quizStepNumber) quizStepNumber.textContent = `Pertanyaan ${quizCurrentIndex + 1} dari ${quizQuestions.length}`;
-    if (quizProgressFill) {
-      quizProgressFill.style.width = `${((quizCurrentIndex + 1) / quizQuestions.length) * 100}%`;
-    }
-    quizQuestionText.textContent = q.question;
-
-    quizOptionsContainer.innerHTML = q.options
-      .map((opt, idx) => {
-        const isSelected = userAnswers[quizCurrentIndex] === idx;
-        return `
-          <button class="quiz-option-btn ${isSelected ? "selected" : ""}" data-option-index="${idx}">
-            <span class="quiz-option-radio"></span>
-            <span>${opt.text}</span>
-          </button>
-        `;
-      })
-      .join("");
-
-    const optionBtns = quizOptionsContainer.querySelectorAll(".quiz-option-btn");
-    optionBtns.forEach((btn) => {
-      btn.addEventListener("click", () => {
-        const idx = parseInt(btn.getAttribute("data-option-index"), 10);
-        userAnswers[quizCurrentIndex] = idx;
-        optionBtns.forEach((b) => b.classList.remove("selected"));
-        btn.classList.add("selected");
-        if (quizNextBtn) quizNextBtn.disabled = false;
-      });
-    });
-
-    if (quizPrevBtn) quizPrevBtn.style.visibility = quizCurrentIndex === 0 ? "hidden" : "visible";
-    if (quizNextBtn) {
-      quizNextBtn.disabled = userAnswers[quizCurrentIndex] === undefined;
-      quizNextBtn.textContent = quizCurrentIndex === quizQuestions.length - 1 ? "Lihat Hasil Rekomendasi ✨" : "Lanjut ➔";
-    }
-  }
-
-  if (quizNextBtn) {
-    quizNextBtn.addEventListener("click", () => {
-      if (userAnswers[quizCurrentIndex] === undefined) {
-        alert("Silakan pilih salah satu jawaban terlebih dahulu!");
-        return;
-      }
-
-      if (quizCurrentIndex < quizQuestions.length - 1) {
-        quizCurrentIndex++;
-        renderQuizQuestion();
-      } else {
-        calculateQuizResult();
-      }
-    });
-  }
-
-  if (quizPrevBtn) {
-    quizPrevBtn.addEventListener("click", () => {
-      if (quizCurrentIndex > 0) {
-        quizCurrentIndex--;
-        renderQuizQuestion();
-      }
-    });
-  }
-
-  function calculateQuizResult() {
-    // Tentukan tanaman terbaik berdasarkan jawaban pengguna
-    // Jawaban filosofi (pertanyaan ke-3 index 2) menjadi bobot utama, dengan fallback ke monstera/sansevieria
-    const selectedPhilosophyTrait = quizQuestions[2].options[userAnswers[2]]?.trait;
-    let matchedPlant = plantsData.find((p) => p.id === selectedPhilosophyTrait);
-
-    if (!matchedPlant) {
-      // Fallback berdasarkan kategori
-      const selectedCategoryTrait = quizQuestions[3].options[userAnswers[3]]?.trait;
-      matchedPlant = plantsData.find((p) => p.category === selectedCategoryTrait) || plantsData[0];
-    }
-
-    if (quizCardQuestion) quizCardQuestion.style.display = "none";
-    if (quizResultView) {
-      quizResultView.style.display = "block";
-      quizResultPlantName.textContent = matchedPlant.name;
-      quizResultPlantScientific.textContent = matchedPlant.scientificName;
-      quizResultPhilosophy.textContent = matchedPlant.philosophy;
-      quizResultCare.textContent = `${matchedPlant.lightLabel} • ${matchedPlant.waterLabel}`;
-
-      if (quizResultDetailBtn) {
-        quizResultDetailBtn.onclick = () => openPlantModal(matchedPlant.id);
-      }
-    }
-  }
-
-  if (quizRestartBtn) {
-    quizRestartBtn.addEventListener("click", () => {
-      quizCurrentIndex = 0;
-      userAnswers.length = 0;
-      if (quizCardQuestion) quizCardQuestion.style.display = "block";
-      if (quizResultView) quizResultView.style.display = "none";
-      renderQuizQuestion();
-    });
-  }
-
-  renderQuizQuestion();
-
-  /* ==========================================================================
-     8. VALIDASI FORMULIR KONSULTASI / KLINIK BOTANI
-     ========================================================================== */
-  const consultationForm = document.getElementById("consultation-form");
-  if (consultationForm) {
-    consultationForm.addEventListener("submit", (e) => {
-      e.preventDefault();
-
-      const name = document.getElementById("contact-name").value.trim();
-      const email = document.getElementById("contact-email").value.trim();
-      const topic = document.getElementById("contact-topic").value;
-      const message = document.getElementById("contact-message").value.trim();
-
-      if (!name || !email || !message) {
-        showToast("Mohon lengkapi semua data formulir!", 3000);
-        return;
-      }
-
-      // Simulasi Pengiriman Sukses
-      showToast(`Terima kasih Kak ${name}! Pesan konsultasi mengenai [${topic}] berhasil terkirim.`, 4000);
-      consultationForm.reset();
-    });
-  }
 
   /* ==========================================================================
      9. TOAST NOTIFICATION & BACK TO TOP & HAMBURGER

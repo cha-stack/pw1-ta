@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="author" content="Kang Maman Plants - Mahasiswa Pemrograman Web 1" />
+  <title>Kang Maman Plants | Filosofi & Makna</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+<header class="site-header">
+    <div class="container navbar">
+      <!-- Logo & Brand Identitas -->
+      <a href="index.html" class="brand-logo" aria-label="Beranda">
+        <div class="brand-icon">
+          <!-- SVG Ikon Daun Organik -->
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"></path>
+            <path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"></path>
+          </svg>
+        </div>
+        <!-- ini buat logo diatas kirinya -->
+        <div>
+          <span class="brand-text-sub">Kang Maman Plants</span>
+        </div>
+      </a>
+
+      <!-- Menu Navigasi Navigasi -->
+      <nav>
+        <ul class="nav-links" id="nav-links">
+          <li><a href="index.html" class="nav-link">Beranda</a></li>
+          <li><a href="katalog.html" class="nav-link">Katalog Tanaman</a></li>
+          <li><a href="filosofi.html" class="nav-link active">Filosofi & Makna</a></li>
+          <li><a href="panduan.html" class="nav-link">Panduan Rawat</a></li>
+        </ul>
+      </nav>
+
+      <!-- Aksi Navigasi (Tema & Counter) -->
+      <div class="nav-actions">
+
+        <!-- Tombol Ganti Tema (Dark / Light Mode) -->
+        <button class="icon-btn" id="theme-toggle-btn" title="Ganti Tema Siang/Malam" aria-label="Ganti Tema">
+          <span id="theme-icon">🌙</span>
+        </button>
+
+        <!-- Tombol Hamburger Mobile -->
+        <button class="hamburger-btn" id="hamburger-btn" aria-label="Buka Menu Navigasi">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+  <main>
+<section class="philosophy-section" id="filosofi">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Kearifan Alam Semesta</span>
+          <h2 class="section-title">Filosofi Tanaman & Pelajaran Kehidupan</h2>
+        </div>
+
+        <div class="philosophy-grid">
+          <!-- Kartu Filosofi 1: Biophilia -->
+          <div class="philosophy-card">
+            <div class="philosophy-icon-wrap">🌿</div>
+            <h3>Hipotesis Biophilia: Keterikatan Manusia & Alam</h3>
+            <p>
+              Secara evolusioner, otak dan jiwa manusia dirancang untuk berdampingan dengan kehijauan flora. Merawat tanaman terbukti secara klinis menurunkan hormon kortisol (stres), meningkatkan konsentrasi kognitif, serta menumbuhkan rasa kasih sayang dan welas asih dalam kehidupan modern.
+            </p>
+            <div class="philosophy-quote-highlight">
+              "Ketika kita menyirami tanaman, kita sesungguhnya sedang menyirami kelembutan di dalam sanubari kita sendiri."
+            </div>
+          </div>
+
+          <!-- Kartu Filosofi 2: Wabi-Sabi & Bonsai -->
+          <div class="philosophy-card">
+            <div class="philosophy-icon-wrap">🪴</div>
+            <h3>Seni Wabi-Sabi: Keindahan Ketidaksempurnaan</h3>
+            <p>
+              Pada seni kerdil pohon bonsai, ranting yang meliuk bengkok dan bekas luka kawat pemangkasan bukanlah aib, melainkan bukti kedewasaan dan ketahanan menghadapi waktu. Filosofi ini mengajarkan kita menerima kerapuhan dan ketidaksempurnaan diri sebagai karya seni yang bernilai luhur.
+            </p>
+            <div class="philosophy-quote-highlight">
+              "Kekuatan sebuah pohon tidak dinilai dari kemulusan kulit batangnya, melainkan seberapa kuat ia bertahan dari pahatan masa lalu."
+            </div>
+          </div>
+
+          <!-- Kartu Filosofi 3: Kearifan Budaya Nusantara -->
+          <div class="philosophy-card">
+            <div class="philosophy-icon-wrap">🌸</div>
+            <h3>Puspa Nusantara & Simbol Ketulusan Budi</h3>
+            <p>
+              Nenek moyang Indonesia menjadikan bunga melati sebagai Puspa Bangsa karena sifatnya yang harum semerbak meski berukuran mungil dan bersahaja. Berdampingan dengan pohon beringin yang melambangkan kerindangan mengayomi, tanaman mencerminkan cita-cita luhur gotong royong dan kesucian niat.
+            </p>
+            <div class="philosophy-quote-highlight">
+              "Kebaikan sejati laksana aroma melati: tidak berteriak untuk didengar, namun wanginya menyejukkan siapa saja yang mendekat."
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+<footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h3>
+            <span>🌿</span> KangMamanPlants
+          </h3>
+          <h4>Informasi Mahasiswa</h4>
+          <p style="font-size: 0.88rem; line-height: 1.6; margin-bottom: 0.75rem;">
+            <strong>Nama:</strong> Aisyah Nurul Hidayah<br />
+            <strong>NIM:</strong> 241011401239<br />
+            <strong>Mata Kuliah:</strong> Pemrograman Web 1<br />
+            <strong>Status:</strong> Tugas Akhir Pengembangan<br />
+          </p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 — Kang Maman Plants. Seluruh hak cipta dilindungi.</p>
+      </div>
+    </div>
+  </footer>
+<button class="back-to-top" id="back-to-top" title="Kembali ke atas" aria-label="Kembali ke atas">
+    ▲
+  </button>
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
