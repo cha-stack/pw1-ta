@@ -78,7 +78,7 @@ const plantsData = [
     summary: "Bunga nasional Indonesia berwarna putih bersih dengan wangi semerbak menenangkan yang mekar sepanjang tahun.",
     philosophy: "Bunga Melati berukuran mungil dan bersahaja, tidak mencolok dalam warna, namun wanginya semerbak menyentuh siapa saja yang berada di dekatnya. Filosofi Melati mengajarkan bahwa kemuliaan dan kebaikan budi manusia tidak ditentukan oleh kemewahan lahiriah, melainkan ketulusan kontribusi nyata bagi sesama.",
 
-    image: "med/melati-putih.jpg"
+    image: "med/MELATI.jpg"
   },
   {
     id: "anggrek-bulan",
@@ -204,7 +204,7 @@ const plantsData = [
     summary: "Tanaman air dengan daun mengapung bulat dan bunga megah yang membuka di pagi hari, menjadi lambang spiritualitas dunia.",
     philosophy: "Akar Teratai tertancap di lumpur kotor dasar kolam yang pekat, batangnya menembus air yang keruh, namun bunganya mekar di atas permukaan dengan kelopak putih bersih tanpa setitik pun lumpur yang menempel. Ini adalah metafora tertinggi integritas: tetap mempertahankan kesucian moral meski berada di lingkungan yang rusak.",
 
-    image: "med/teratai.jpg"
+    image: "med/waterlily.jpg"
   },
   {
     id: "lavender",
@@ -292,7 +292,7 @@ const plantsData = [
     tagline: "Simbol Cinta, Keberanian & Batasan Diri",
     summary: "Ratu bunga legendaris dengan kelopak bertumpuk indah beraroma manis yang dilindungi oleh duri tajam pada batangnya.",
     philosophy: "Mawar menampilkan keindahan mahkota bunga yang memikat sekaligus duri pelindung pada batangnya. Ini mengajarkan bahwa cinta dan kebaikan sejati harus disertai dengan harga diri dan batasan (boundaries) yang tegas, sehingga ketulusan kita tidak dieksploitasi oleh pihak yang tidak bertanggung jawab.",
-    image: "med/mawar-merah.jpg"
+    image: "med/mawar merah.jpg"
   }
 ];
 
